@@ -219,3 +219,69 @@ window.onload = function() {
         showLogin();
     }
 };
+
+const backendUrl = 'https://your-project.vercel.app/api';
+
+function login() {
+  const username = document.getElementById('username').value.trim();
+  const password = document.getElementById('password').value.trim();
+
+  if (username === '' || password === '') {
+    alert('Please enter both username and password.');
+    return;
+  }
+
+  fetch(`${backendUrl}/login`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ username, password }),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.error) {
+        alert(data.error);
+      } else {
+        localStorage.setItem('loggedInUser', JSON.stringify(data.user));
+        alert('Login successful!');
+        navigateTo('profile');
+        displayProfile();
+      }
+    })
+    .catch((error) => console.error('Error:', error));
+}
+
+function register() {
+  const regUsername = document.getElementById('regUsername').value.trim();
+  const regPassword = document.getElementById('regPassword').value.trim();
+  const regName = document.getElementById('regName').value.trim();
+  const regCollege = document.getElementById('regCollege').value.trim();
+  const regCourse = document.getElementById('regCourse').value.trim();
+  const regDob = document.getElementById('regDob').value.trim();
+  const regContact = document.getElementById('regContact').value.trim();
+  const regSex = document.getElementById('regSex').value.trim();
+
+  if (regUsername === '' || regPassword === '' || regName === '' || regCollege === '' || regCourse === '' || regDob === '' || regContact === '' || regSex === '') {
+    alert('Please fill in all fields.');
+    return;
+  }
+
+  fetch(`${backendUrl}/register`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ regUsername, regPassword, regName, regCollege, regCourse, regDob, regContact, regSex }),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.error) {
+        alert(data.error);
+      } else {
+        alert(data.message);
+        showLogin();
+      }
+    })
+    .catch((error) => console.error('Error:', error));
+}

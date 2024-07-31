@@ -1,5 +1,3 @@
-// script.js
-
 // Function to navigate between sections
 function navigateTo(section) {
     const sections = document.querySelectorAll('section.content');
@@ -16,8 +14,6 @@ function openResource(resource) {
     }
     window.open(`${resource}.html`, '_blank');
 }
-
-
 
 // Function to add a task
 function addTask() {
@@ -62,38 +58,15 @@ function login() {
         return;
     }
 
-    const users = JSON.parse(localStorage.getItem('users')) || [];
-    const user = users.find(user => user.username === username && user.password === password);
-
-    if (user) {
-        localStorage.setItem('loggedInUser', JSON.stringify(user));
-        alert('Login successful!');
-        navigateTo('profile');
-        displayProfile();
-    } else {
-        alert('Invalid username or password.');
-    }
-}
-
-// Function to handle login
-function login() {
-    const username = document.getElementById('username').value.trim();
-    const password = document.getElementById('password').value.trim();
-
-    if (username === '' || password === '') {
-        alert('Please enter both username and password.');
-        return;
-    }
-
-    fetch('/login', {
+    fetch(`${backendUrl}/login`, {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ username, password })
+        body: JSON.stringify({ username, password }),
     })
-    .then(response => response.json())
-    .then(data => {
+    .then((response) => response.json())
+    .then((data) => {
         if (data.error) {
             alert(data.error);
         } else {
@@ -103,7 +76,7 @@ function login() {
             displayProfile();
         }
     })
-    .catch(error => console.error('Error:', error));
+    .catch((error) => console.error('Error:', error));
 }
 
 // Function to handle registration
@@ -122,15 +95,15 @@ function register() {
         return;
     }
 
-    fetch('/register', {
+    fetch(`${backendUrl}/register`, {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ regUsername, regPassword, regName, regCollege, regCourse, regDob, regContact, regSex })
+        body: JSON.stringify({ regUsername, regPassword, regName, regCollege, regCourse, regDob, regContact, regSex }),
     })
-    .then(response => response.json())
-    .then(data => {
+    .then((response) => response.json())
+    .then((data) => {
         if (data.error) {
             alert(data.error);
         } else {
@@ -138,9 +111,8 @@ function register() {
             showLogin();
         }
     })
-    .catch(error => console.error('Error:', error));
+    .catch((error) => console.error('Error:', error));
 }
-
 
 // Function to display profile details
 function displayProfile() {
@@ -215,73 +187,10 @@ function showLogin() {
 window.onload = function() {
     if (isLoggedIn()) {
         displayProfile();
+        navigateTo('profile');
     } else {
         showLogin();
     }
 };
 
 const backendUrl = 'https://smard-study.vercel.app/api';
-
-function login() {
-  const username = document.getElementById('username').value.trim();
-  const password = document.getElementById('password').value.trim();
-
-  if (username === '' || password === '') {
-    alert('Please enter both username and password.');
-    return;
-  }
-
-  fetch(`${backendUrl}/login`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ username, password }),
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      if (data.error) {
-        alert(data.error);
-      } else {
-        localStorage.setItem('loggedInUser', JSON.stringify(data.user));
-        alert('Login successful!');
-        navigateTo('profile');
-        displayProfile();
-      }
-    })
-    .catch((error) => console.error('Error:', error));
-}
-
-function register() {
-  const regUsername = document.getElementById('regUsername').value.trim();
-  const regPassword = document.getElementById('regPassword').value.trim();
-  const regName = document.getElementById('regName').value.trim();
-  const regCollege = document.getElementById('regCollege').value.trim();
-  const regCourse = document.getElementById('regCourse').value.trim();
-  const regDob = document.getElementById('regDob').value.trim();
-  const regContact = document.getElementById('regContact').value.trim();
-  const regSex = document.getElementById('regSex').value.trim();
-
-  if (regUsername === '' || regPassword === '' || regName === '' || regCollege === '' || regCourse === '' || regDob === '' || regContact === '' || regSex === '') {
-    alert('Please fill in all fields.');
-    return;
-  }
-
-  fetch(`${backendUrl}/register`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ regUsername, regPassword, regName, regCollege, regCourse, regDob, regContact, regSex }),
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      if (data.error) {
-        alert(data.error);
-      } else {
-        alert(data.message);
-        showLogin();
-      }
-    })
-    .catch((error) => console.error('Error:', error));
-}

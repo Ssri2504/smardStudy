@@ -220,7 +220,7 @@ window.onload = function() {
     }
 };
 
-const backendUrl = 'https://your-project.vercel.app/api';
+const backendUrl = 'https://smard-study.vercel.app/api';
 
 function login() {
   const username = document.getElementById('username').value.trim();

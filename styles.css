@@ -136,6 +136,95 @@ section#about .about-content {
     color: #673AB7; /* Secondary accent color for hover */
 }
 
+/* To-Do List styling */
+#todo {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #ffffff; /* White background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+  }
+  
+  #todo input[type="text"] {
+    width: calc(100% - 110px);
+    margin-right: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  #todo button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007B83; /* Soft blue button background */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  #todo button:hover {
+    background-color: #005960; /* Darker blue on hover */
+  }
+  
+  #todoList {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+  }
+  
+  #todoList li {
+    background-color: #f7f9fc; /* Light blue-gray background */
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+  
+  #todoList li .task-time {
+    font-size: 0.8em;
+    color: #666;
+    margin-left: 10px;
+  }
+
+/* Study Together Page */
+section#study .study-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  section#study h2 {
+    color: #007B83;
+  }
+  
+  section#study button {
+    background-color: #007B83;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+  }
+  
+  section#study button:hover {
+    background-color: #005960;
+  }
+  
+  #videoCall {
+    margin-top: 20px;
+  }
+
 .resources-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -203,6 +292,8 @@ section#about .about-content {
 #login button:hover, #register button:hover {
     background-color: #005960; /* Darker blue on hover */
 }
+
+
 
 footer {
     background: #333; /* Dark gray footer background */

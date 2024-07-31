@@ -152,21 +152,25 @@
       </section>
       <section id="todo" class="content" style="display: none">
         <h2>To-Do List</h2>
-        <input type="text" id="todoInput" placeholder="New task" />
-        <button onclick="addTask()">Add Task</button>
-        <ul id="todoList"></ul>
+        <div id="todo">
+          <input type="text" id="todoInput" placeholder="New task" />
+          <button onclick="addTask()">Add Task</button>
+          <ul id="todoList"></ul>
+        </div>
       </section>
       <section id="study" class="content" style="display: none">
-        <h2>Study Together</h2>
-        <p>Join a live study session:</p>
-        <button onclick="startVideoCall()">Start Video Call</button>
-        <div id="videoCall" style="display: none">
-          <iframe
-            src="https://meet.jit.si/"
-            frameborder="0"
-            allow="camera; microphone"
-            style="width: 100%; height: 500px"
-          ></iframe>
+        <div class="study-container">
+          <h2>Study Together</h2>
+          <p>Join a live study session:</p>
+          <button onclick="startVideoCall()">Start Video Call</button>
+          <div id="videoCall" style="display: none">
+            <iframe
+              src="https://meet.jit.si/"
+              frameborder="0"
+              allow="camera; microphone"
+              style="width: 100%; height: 500px"
+            ></iframe>
+          </div>
         </div>
       </section>
       <section id="profile" class="content" style="display: none">

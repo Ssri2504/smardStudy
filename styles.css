@@ -1,0 +1,230 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #F5F5F5; /* Light gray background */
+    color: #2D3B45; /* Dark gray text */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #f7f9fc; /* Light blue-gray background similar to Canvas */
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+header img.logo {
+    height: 50px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: #007B83; /* Soft blue for links */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+section.content {
+    padding: 20px;
+    animation: fadeIn 0.5s;
+}
+
+section#home {
+    display: block;
+    background: url('students-studying.jpg') no-repeat center center/cover;
+    color: white;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+section#home .intro {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+section#home h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+section#home p {
+    font-size: 1.5em;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+section#about .about-content {
+    background: url('about-background.jpg') no-repeat center center/cover;
+    padding: 20px;
+    border-radius: 10px;
+    color: black;
+}
+
+#about h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.team {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 200px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.team-member:hover {
+    transform: scale(1.05);
+    background-color: #f0f0f0; /* Light gray background on hover */
+}
+
+.team-member img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.social-links a {
+    color: #007B83; /* Soft blue for social links */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #673AB7; /* Secondary accent color for hover */
+}
+
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.resource-column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.resource-column button {
+    background-color: #007B83; /* Soft blue button background */
+    color: white; /* White button text */
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.resource-column button:hover {
+    background-color: #005960; /* Darker blue on hover */
+}
+
+.profile-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.website-name {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #007B83; /* Color matching the theme */
+    margin-bottom: 20px;
+}
+
+#login, #register {
+    display: flex;
+    flex-direction: column;
+}
+
+#login input, #register input, #register select, #login button, #register button {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+}
+
+#login button, #register button {
+    background-color: #007B83; /* Soft blue button background */
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#login button:hover, #register button:hover {
+    background-color: #005960; /* Darker blue on hover */
+}
+
+footer {
+    background: #333; /* Dark gray footer background */
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+footer a {
+    color: #007B83; /* Soft blue links */
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

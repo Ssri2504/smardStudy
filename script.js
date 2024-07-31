@@ -16,7 +16,7 @@ function navigateTo(section) {
   }
   
   // Function to add a task
-  function addTask() {
+function addTask() {
     if (!isLoggedIn()) {
       alert('Please login first.');
       navigateTo('profile');
@@ -27,11 +27,16 @@ function navigateTo(section) {
     const taskText = taskInput.value.trim();
     if (taskText === '') return;
   
+    // Get current time
+    const now = new Date();
+    const time = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  
     const taskItem = document.createElement('li');
-    taskItem.innerHTML = `<input type="checkbox"> ${taskText}`;
+    taskItem.innerHTML = `<span><input type="checkbox"> ${taskText}</span><span class="task-time">${time}</span>`;
     document.getElementById('todoList').appendChild(taskItem);
     taskInput.value = '';
   }
+  
   
   // Function to start a video call
   function startVideoCall() {
@@ -126,6 +131,8 @@ function login() {
       `;
     }
   }
+
+  
   
   // Function to handle logout
   function logout() {

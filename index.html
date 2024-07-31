@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Resources</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <img src="logo.png" alt="Logo" class="logo" />
+      <nav>
+        <ul>
+          <li><a href="#" onclick="navigateTo('home')">Home</a></li>
+          <li><a href="#" onclick="navigateTo('about')">About</a></li>
+          <li><a href="#" onclick="navigateTo('resources')">Resources</a></li>
+          <li><a href="#" onclick="navigateTo('todo')">To-Do List</a></li>
+          <li><a href="#" onclick="navigateTo('study')">Study Together</a></li>
+          <li><a href="#" onclick="navigateTo('profile')">Profile</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="home" class="content">
+        <div class="intro">
+          <h1>Welcome to Student Resources</h1>
+          <p>
+            A platform where students can find study materials, collaborate
+            online, and track their academic progress.
+          </p>
+        </div>
+      </section>
+      <section id="about" class="content" style="display: none">
+        <div class="about-content">
+          <h2>About</h2>
+          <p>
+            Welcome to Student Resources, a platform where students can find
+            study materials, collaborate online, and track their academic
+            progress. Our goal is to provide a comprehensive and interactive
+            learning environment for students of all ages.
+          </p>
+          <p>We offer:</p>
+          <ul>
+            <li>Curated study resources and notes</li>
+            <li>A collaborative platform for studying together</li>
+            <li>
+              Tools to help you manage your tasks and monitor your progress
+            </li>
+          </ul>
+          <p>
+            Our platform is designed to be user-friendly and accessible,
+            ensuring that students can easily navigate and find the resources
+            they need. Whether you're looking for detailed notes, video
+            tutorials, or a community to study with, Student Resources has got
+            you covered.
+          </p>
+          <p>
+            Our mission is to empower students by providing them with the tools
+            and resources they need to succeed academically. We believe that
+            education should be a collaborative and engaging experience, and our
+            platform reflects this philosophy by offering various features such
+            as:
+          </p>
+          <ul>
+            <li>
+              Live study sessions where you can join or host video calls to
+              study with peers
+            </li>
+            <li>
+              A dynamic to-do list to help you stay organized and on top of your
+              tasks
+            </li>
+            <li>Regular updates with new study materials and resources</li>
+          </ul>
+          <p>
+            We are constantly working to improve our platform and welcome
+            feedback from our users. If you have any suggestions or ideas on how
+            we can enhance your experience, please don't hesitate to reach out
+            to us.
+          </p>
+        </div>
+        <h3>Meet the Team</h3>
+        <div class="team">
+          <div class="team-member">
+            <img src="suryansh.jpg" alt="Suryansh" />
+            <h4>Suryansh</h4>
+            <p>B.Tech, 3rd Year, EEE Department</p>
+            <div class="social-links">
+              <a
+                href="https://www.linkedin.com/in/suryansh-srivastava-010024254?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                >LinkedIn</a
+              >
+              <a
+                href="https://www.instagram.com/suryansh_2504?igsh=MW5hdGV6M2VncHJvbg=="
+                >Instagram</a
+              >
+              <a href="https://github.com/Ssri2504">GitHub</a>
+            </div>
+          </div>
+          <div class="team-member">
+            <img src="mansi.jpg" alt="Mansi" />
+            <h4>Mansi</h4>
+            <p>B.Tech, 3rd Year, ECE Department</p>
+            <div class="social-links">
+              <a href="https://www.linkedin.com/in/mansi-mehta-1803ss/"
+                >LinkedIn</a
+              >
+              <a href="#">Instagram</a>
+              <a href="https://github.com/Messycodess">GitHub</a>
+            </div>
+          </div>
+          <div class="team-member">
+            <img src="suraj.jpg" alt="Suraj" />
+            <h4>Suraj</h4>
+            <p>B.Tech, 3rd Year, Metallurgy Department</p>
+            <div class="social-links">
+              <a href="https://www.linkedin.com/in/surajmishra441/">LinkedIn</a>
+              <a href="https://www.instagram.com/sachivji_fulera/">Instagram</a>
+              <a href="https://github.com/1SurajMishra1">GitHub</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="resources" class="content" style="display: none">
+        <h2>Resources</h2>
+        <div class="resources-grid">
+          <div class="resource-column">
+            <button onclick="openResource('python')">Python</button>
+            <button onclick="openResource('c')">C</button>
+            <button onclick="openResource('cpp')">C++</button>
+            <button onclick="openResource('java')">Java</button>
+          </div>
+          <div class="resource-column">
+            <button onclick="openResource('fullstack')">Full Stack</button>
+            <button onclick="openResource('frontend')">Front End</button>
+            <button onclick="openResource('backend')">Back End</button>
+            <button onclick="openResource('javascript')">JavaScript</button>
+          </div>
+          <div class="resource-column">
+            <button onclick="openResource('react')">React</button>
+            <button onclick="openResource('angular')">Angular</button>
+            <button onclick="openResource('nodejs')">Node.js</button>
+            <button onclick="openResource('flutter')">Flutter</button>
+          </div>
+          <div class="resource-column">
+            <button onclick="openResource('android')">Android Dev</button>
+            <button onclick="openResource('rust')">Rust</button>
+            <button onclick="openResource('dsa')">DSA</button>
+            <button onclick="openResource('prompt')">Prompt Eng.</button>
+          </div>
+        </div>
+      </section>
+      <section id="todo" class="content" style="display: none">
+        <h2>To-Do List</h2>
+        <input type="text" id="todoInput" placeholder="New task" />
+        <button onclick="addTask()">Add Task</button>
+        <ul id="todoList"></ul>
+      </section>
+      <section id="study" class="content" style="display: none">
+        <h2>Study Together</h2>
+        <p>Join a live study session:</p>
+        <button onclick="startVideoCall()">Start Video Call</button>
+        <div id="videoCall" style="display: none">
+          <iframe
+            src="https://meet.jit.si/"
+            frameborder="0"
+            allow="camera; microphone"
+            style="width: 100%; height: 500px"
+          ></iframe>
+        </div>
+      </section>
+      <section id="profile" class="content" style="display: none">
+        <div class="profile-container">
+          <h1 class="website-name">smartStudy</h1>
+          <div id="login">
+            <h2>Login</h2>
+            <input type="text" id="username" placeholder="Username" />
+            <input type="password" id="password" placeholder="Password" />
+            <button onclick="login()">Login</button>
+            <button onclick="showRegister()">Register</button>
+          </div>
+          <div id="register" style="display: none">
+            <h2>Register</h2>
+            <input type="text" id="regUsername" placeholder="Username" />
+            <input type="password" id="regPassword" placeholder="Password" />
+            <input type="text" id="regName" placeholder="Name" />
+            <input type="text" id="regCollege" placeholder="College Name" />
+            <input type="text" id="regCourse" placeholder="Course" />
+            <input type="date" id="regDob" placeholder="Date of Birth" />
+            <input type="text" id="regContact" placeholder="Contact No." />
+            <select id="regSex">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+            <button onclick="register()">Register</button>
+            <button onclick="showLogin()">Back to Login</button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>Contact us: smardstudy12@example.com</p>
+      <p>Follow us on social media:</p>
+      <p>
+        <a href="https://facebook.com">Facebook</a> |
+        <a href="https://twitter.com">Twitter</a> |
+        <a href="https://instagram.com">Instagram</a>
+      </p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -72,8 +72,7 @@ function login() {
         } else {
             localStorage.setItem('loggedInUser', JSON.stringify(data.user));
             alert('Login successful!');
-            navigateTo('profile');
-            displayProfile();
+            navigateTo('home');
         }
     })
     .catch((error) => console.error('Error:', error));
@@ -192,5 +191,3 @@ window.onload = function() {
         showLogin();
     }
 };
-
-const backendUrl = 'https://smard-study.vercel.app/api';

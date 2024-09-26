@@ -1,7 +1,8 @@
+/* General Styles */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #F5F5F5; /* Light gray background */
-    color: #2D3B45; /* Dark gray text */
+    background-color: #F5F5F5;
+    color: #2D3B45;
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -9,18 +10,20 @@ body {
 }
 
 header {
-    background-color: #f7f9fc; /* Light blue-gray background similar to Canvas */
+    background-color: #f7f9fc;
     padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
 header img.logo {
     height: 50px;
 }
 
+/* Desktop Navigation */
 nav ul {
     list-style: none;
     padding: 0;
@@ -33,21 +36,70 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #007B83; /* Soft blue for links */
+    color: #007B83;
     text-decoration: none;
     font-weight: bold;
+    padding-bottom: 5px;
+    position: relative;
 }
 
+nav ul li a.active-link {
+    border-bottom: 2px solid #007B83;
+}
+
+/* Underline on hover for other pages */
+nav ul li a:hover:not(.active-link) {
+    border-bottom: 2px solid #007B83;
+}
+
+/* Hamburger Menu for Mobile */
+#hamburger {
+    display: none; /* Hidden on desktop */
+    font-size: 30px;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 20px;
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* Hidden by default */
+        flex-direction: column;
+        gap: 10px;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        background-color: #f7f9fc;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 20;
+    }
+
+    nav ul.active {
+        display: flex; /* Display when active */
+    }
+
+    nav ul li {
+        display: block;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    #hamburger {
+        display: block; /* Display hamburger icon on mobile */
+    }
+}
+
+/* Main Content */
 main {
     flex: 1;
     padding: 20px;
 }
 
-section.content {
-    padding: 20px;
-    animation: fadeIn 0.5s;
-}
-
+/* Home Section */
 section#home {
     display: block;
     background: url('students-studying.jpg') no-repeat center center/cover;
@@ -59,6 +111,7 @@ section#home {
     justify-content: center;
     align-items: center;
     position: relative;
+    z-index: 1;
 }
 
 section#home .intro {
@@ -78,6 +131,7 @@ section#home p {
     margin: 0 auto;
 }
 
+/* About Section */
 section#about .about-content {
     background: url('about-background.jpg') no-repeat center center/cover;
     padding: 20px;
@@ -90,6 +144,7 @@ section#about .about-content {
     margin-bottom: 20px;
 }
 
+/* Team Section */
 .team {
     display: flex;
     justify-content: center;
@@ -109,7 +164,7 @@ section#about .about-content {
 
 .team-member:hover {
     transform: scale(1.05);
-    background-color: #f0f0f0; /* Light gray background on hover */
+    background-color: #f0f0f0;
 }
 
 .team-member img {
@@ -127,69 +182,69 @@ section#about .about-content {
 }
 
 .social-links a {
-    color: #007B83; /* Soft blue for social links */
+    color: #007B83;
     text-decoration: none;
     transition: color 0.3s;
 }
 
 .social-links a:hover {
-    color: #673AB7; /* Secondary accent color for hover */
+    color: #673AB7;
 }
 
 /* To-Do List styling */
 #todo {
     max-width: 500px;
     margin: 0 auto;
-    background-color: #ffffff; /* White background */
+    background-color: #ffffff;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
-  }
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
   
-  #todo input[type="text"] {
+#todo input[type="text"] {
     width: calc(100% - 110px);
     margin-right: 10px;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
-  }
-  
-  #todo button {
+}
+
+#todo button {
     padding: 10px;
     border: none;
     border-radius: 5px;
-    background-color: #007B83; /* Soft blue button background */
+    background-color: #007B83;
     color: white;
     cursor: pointer;
     transition: background-color 0.3s;
-  }
-  
-  #todo button:hover {
-    background-color: #005960; /* Darker blue on hover */
-  }
-  
-  #todoList {
+}
+
+#todo button:hover {
+    background-color: #005960;
+}
+
+#todoList {
     list-style-type: none;
     padding: 0;
     margin-top: 20px;
-  }
-  
-  #todoList li {
-    background-color: #f7f9fc; /* Light blue-gray background */
+}
+
+#todoList li {
+    background-color: #f7f9fc;
     padding: 10px;
     border-radius: 5px;
     margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  }
-  
-  #todoList li .task-time {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#todoList li .task-time {
     font-size: 0.8em;
     color: #666;
     margin-left: 10px;
-  }
+}
 
 /* Study Together Page */
 section#study .study-container {
@@ -200,13 +255,13 @@ section#study .study-container {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-  }
-  
-  section#study h2 {
+}
+
+section#study h2 {
     color: #007B83;
-  }
-  
-  section#study button {
+}
+
+section#study button {
     background-color: #007B83;
     color: white;
     border: none;
@@ -215,16 +270,17 @@ section#study .study-container {
     cursor: pointer;
     margin-top: 10px;
     transition: background-color 0.3s;
-  }
-  
-  section#study button:hover {
-    background-color: #005960;
-  }
-  
-  #videoCall {
-    margin-top: 20px;
-  }
+}
 
+section#study button:hover {
+    background-color: #005960;
+}
+
+#videoCall {
+    margin-top: 20px;
+}
+
+/* Resources Page */
 .resources-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -238,8 +294,8 @@ section#study .study-container {
 }
 
 .resource-column button {
-    background-color: #007B83; /* Soft blue button background */
-    color: white; /* White button text */
+    background-color: #007B83;
+    color: white;
     border: none;
     padding: 10px;
     border-radius: 5px;
@@ -248,9 +304,10 @@ section#study .study-container {
 }
 
 .resource-column button:hover {
-    background-color: #005960; /* Darker blue on hover */
+    background-color: #005960;
 }
 
+/* Profile Page */
 .profile-container {
     max-width: 400px;
     margin: 0 auto;
@@ -264,7 +321,7 @@ section#study .study-container {
 .website-name {
     font-size: 1.5em;
     font-weight: bold;
-    color: #007B83; /* Color matching the theme */
+    color: #007B83;
     margin-bottom: 20px;
 }
 
@@ -282,7 +339,7 @@ section#study .study-container {
 }
 
 #login button, #register button {
-    background-color: #007B83; /* Soft blue button background */
+    background-color: #007B83;
     color: white;
     border: none;
     cursor: pointer;
@@ -290,11 +347,10 @@ section#study .study-container {
 }
 
 #login button:hover, #register button:hover {
-    background-color: #005960; /* Darker blue on hover */
+    background-color: #005960;
 }
 
-
-
+/* Footer Styles */
 footer {
     background: #333; /* Dark gray footer background */
     color: white;
@@ -311,11 +367,7 @@ footer a:hover {
     text-decoration: underline;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+footer p {
+    margin: 0;
 }
+

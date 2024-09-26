@@ -195,3 +195,35 @@ function login() {
     }
   };
   
+// Toggle the mobile menu
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.querySelector('nav ul');
+const navLinks = document.querySelectorAll('nav ul li a');
+
+// Toggle the menu
+hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+});
+
+// Hide the menu after clicking any link
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+    });
+});;
+
+// Function to highlight the active page link
+window.onload = function() {
+  const currentPath = window.location.pathname.split("/").pop();
+  const navLinks = document.querySelectorAll("nav ul li a");
+
+  navLinks.forEach(link => {
+      const href = link.getAttribute("href");
+      if (href === currentPath || (currentPath === '' && href === 'home')) {
+          link.classList.add('active-link'); // Add active-link class to the active page
+      } else {
+          link.classList.remove('active-link'); // Remove from non-active pages
+      }
+  });
+};
+
